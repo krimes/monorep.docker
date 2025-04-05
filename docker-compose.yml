@@ -11,15 +11,11 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    networks:
-      - priv-back
 
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    networks:
-      - priv-back
 
   certbot:
     ports:
@@ -36,5 +32,3 @@ services:
       args:
         DOMAIN_EMAIL: ${DOMAIN_EMAIL}
         DOMAIN_URL: ${DOMAIN_URL}
-    networks:
-      - priv-back
