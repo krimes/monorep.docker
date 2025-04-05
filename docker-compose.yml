@@ -13,6 +13,8 @@ services:
       - "443:443"
 
   backend:
+    ports:
+      - "3000:3000"
     build:
       context: ./backend
       dockerfile: Dockerfile
